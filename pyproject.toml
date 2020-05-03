@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "greynir-service"
+version = "0.1.0"
+description = ""
+authors = ["Arnar Yngvason <arnar@reon.is>"]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+flask = "^1.1.2"
+sentry-sdk = {extras = ["flask"], version = "^0.14.3"}
+redis = "^3.4.1"
+pytest = "^5.4.1"
+pylint = "^2.4.4"
+flask_env = "^2.0.0"
+fakeredis = "^1.4.0"
+typing_extensions = "^3.7.4"
+tokenizer = "^2.0.5"
+reynir = "^2.2.0"
+ipython = "^7.13.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
