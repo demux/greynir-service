@@ -37,8 +37,6 @@ def tokenize_api():
         text = request.get_data(as_text=True)
 
     def serialize_token_val(tok_val):
-        if tok_val is None:
-            return None
         for val in tok_val:
             if isinstance(val, BIN_Meaning):
                 yield val._asdict()
@@ -48,5 +46,5 @@ def tokenize_api():
     return json_response([{
         'kind': TOK.descr[tok.kind],
         'txt': tok.txt,
-        'val': list(serialize_token_val(tok.val)),
+        'val': list(serialize_token_val(tok.val)) if tok.val else None,
     } for tok in tokenize(text)])

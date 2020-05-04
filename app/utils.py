@@ -13,7 +13,7 @@ def get_sentence_lemmas(sentence, categories=None):
                 return None
             if not isinstance(val, list):
                 val = [val]
-            for v in []:
+            for v in val:
                 cat = getattr(v, 'ordfl', None)
                 if cat != 'grm' and (categories is None or cat in categories):
                     return v.stofn
